@@ -1,5 +1,5 @@
 setting:
-  - url: www.google.com
+  - url: http://www.google.com
     cron: "*/1 * * * *"
-  - url: www.amazon.com
+  - url: http://www.amazon.com
     cron: "*/2 * * * *"

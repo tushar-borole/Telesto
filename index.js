@@ -1,35 +1,41 @@
-const fs = require('fs'),
-    HtmlDiffer = require('html-differ').HtmlDiffer,
-    logger = require('html-differ/lib/logger'),
-    YAML = require('yamljs'),
-    CronJob = require('cron').CronJob,
-    setupCache = require('./src/cacheSetup');
+const fs = require("fs"),
+  HtmlDiffer = require("html-differ").HtmlDiffer,
+  logger = require("html-differ/lib/logger"),
+  YAML = require("yamljs"),
+  CronJob = require("cron").CronJob,
+  setupCache = require("./src/cacheSetup");
 
-const ymlToObject = YAML.load('setting.yml');
-
-
+const ymlToObject = YAML.load("setting.yml");
 
 //setup intial cache
-setupCache(ymlToObject.setting)
+setupCache(ymlToObject.setting);
+const redisCache = require("./src/redis");
 
-
-const html1 = fs.readFileSync('1.html', 'utf-8'),
-    html2 = fs.readFileSync('2.html', 'utf-8');
+const html1 = fs.readFileSync("1.html", "utf-8"),
+  html2 = fs.readFileSync("2.html", "utf-8");
 
 const options = {
-    ignoreAttributes: [],
-    compareAttributesAsJSON: [],
-    ignoreWhitespaces: true,
-    ignoreComments: true,
-    ignoreEndTags: false,
-    ignoreDuplicateAttributes: false
+  ignoreAttributes: [],
+  compareAttributesAsJSON: [],
+  ignoreWhitespaces: true,
+  ignoreComments: true,
+  ignoreEndTags: false,
+  ignoreDuplicateAttributes: false
 };
 
 // crete the cron job
-for(let val of ymlToObject.setting){
-    new CronJob(val.cron, function() {
-        console.log(this);
-    }, null, true, null,val);
+for (let val of ymlToObject.setting) {
+  new CronJob(
+    val.cron,
+    function() {
+      console.log(this);
+      redisCache.get(this.url);
+    },
+    null,
+    true,
+    null,
+    val
+  );
 }
 //
 // const htmlDiffer = new HtmlDiffer(options);
