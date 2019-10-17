@@ -8,6 +8,7 @@ module.exports = function() {
     new CronJob(
       val.cron,
       function() {
+        console.log(`cron job at ${new Date()}`);
         monitorChanges(this.url);
       },
       null,

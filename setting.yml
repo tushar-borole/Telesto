@@ -3,3 +3,11 @@ setting:
     cron: "*/1 * * * *"
   - url: https://helloworld.com/
     cron: "*/2 * * * *"
+smtp:
+  host: 'smtp.mailtrap.io'
+  port: 2525
+  from: put_email_here
+  to: put_toemail_here
+  auth:
+    user: put_username_here
+    pass: put_passord_here

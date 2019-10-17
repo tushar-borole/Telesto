@@ -1,6 +1,7 @@
 const redisCache = require("./redis");
 const fetch = require("node-fetch");
 const HtmlDiffer = require("html-differ").HtmlDiffer;
+const notification = require("./notification");
 
 const options = {
   ignoreAttributes: [],
@@ -22,7 +23,7 @@ module.exports = function(url) {
 
     if (!isEqual) {
       redisCache.set(url, htmlResponse);
+      notification.email(url);
     }
-    console.log(isEqual);
   });
 };
