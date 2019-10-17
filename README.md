@@ -37,6 +37,10 @@ Run you app by
 docker-compose up
 ```
 
+### Todo
+
+1. Integration with different notification service like twilio,slack
+2. One click deployment solution
 
 
 ----------
