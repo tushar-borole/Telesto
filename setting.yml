@@ -1,5 +1,5 @@
 setting:
-  - url: http://www.google.com
+  - url: https://time.is
     cron: "*/1 * * * *"
-  - url: http://www.amazon.com
+  - url: https://helloworld.com/
     cron: "*/2 * * * *"
