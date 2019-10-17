@@ -2,7 +2,7 @@
 monitor any webpage and send notification on page change
 
 
-## pre-requisite
+## Pre-requisite
  Docker enviornment Setup
 Please follow url https://docs.docker.com/install/ for setting yup the docker
 
