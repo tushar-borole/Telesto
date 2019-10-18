@@ -4,6 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      - ENV=local
     volumes:
       - .:/code
       - /code/node_modules
