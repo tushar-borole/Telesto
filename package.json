@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "cache-manager": "^2.10.0",
+    "cache-manager-redis-store": "^1.5.0",
+    "cron": "^1.7.2",
+    "html-differ": "^1.4.0",
+    "node-fetch": "^2.6.0",
+    "nodemailer": "^6.3.1",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
+}
