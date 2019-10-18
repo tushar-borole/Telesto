@@ -3,5 +3,6 @@
   "description": "Detect web page change easily",
   "repository": "https://github.com/tushariscoolster/Telesto",
   "keywords": ["telesto", "webchange"],
+  "addons": ["heroku-redis"],
   "stack": "container"
 }
