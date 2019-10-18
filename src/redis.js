@@ -3,7 +3,7 @@ const redisStore = require("cache-manager-redis-store");
 
 const redisCache = cacheManager.caching({
   store: redisStore,
-  host: "redis://redis", // default value
+  host: "redis", // default value
   port: 6379, // default value
   db: 0,
   ttl: 600
